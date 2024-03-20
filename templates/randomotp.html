@@ -1,0 +1,22 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<body>
+   <div class="col order-first">
+      <form method="post" action="{% url 'randomotp1' %}">
+ {% csrf_token %}
+    <br>
+    <label>Enter text : </label>
+    <input type="text" name="input1" required>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+    </div>
+<h1>{{result_str}}</h1>
+{% endblock %}
+</body>
+</html>
